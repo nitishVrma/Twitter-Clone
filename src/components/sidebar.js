@@ -13,11 +13,16 @@ import { NavLink } from "react-router-dom";
 
 const A = styled.div`
   width: 100%;
-  padding: auto;
+  .sidebar-center {
+    margin-left: 20%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+  }
   .tweeticon {
     color: rgb(29, 155, 240);
     /* margin-left: 25px; */
-    font-size: 30px;
+    font-size: 40px;
     padding: 10px;
   }
   .tweeticon:hover {
@@ -98,7 +103,7 @@ const A = styled.div`
     background-color: white;
   }
   .selected {
-   // background-color: #c1dee6;
+    // background-color: #c1dee6;
   }
   .navlink {
     text-decoration: none;
@@ -108,65 +113,67 @@ const A = styled.div`
 function Sidebar() {
   return (
     <A>
-      <div className="twt">
-        <TwitterIcon className="tweeticon" />
-      </div>
-      <NavLink to="/home" className="navlink">
-        <div className="body backblack">
-          <HomeRoundedIcon className="icon" />
-          <button className="btn liggg">Home</button>
+      <div className="sidebar-center">
+        <div className="twt">
+          <TwitterIcon className="tweeticon" />
         </div>
-      </NavLink>
-      <NavLink to="/explore" className="navlink">
+        <NavLink to="/home" className="navlink">
+          <div className="body backblack">
+            <HomeRoundedIcon className="icon" />
+            <button className="btn liggg">Home</button>
+          </div>
+        </NavLink>
+        <NavLink to="/explore" className="navlink">
+          <div className="body">
+            <SearchIcon className="icon" />
+            <button className="btn liggg">Explore</button>
+          </div>
+        </NavLink>
+        <NavLink to="/notification" className="navlink">
+          <div className="body">
+            <NotificationsNoneIcon className="icon" />
+            <button className="btn liggg">Notifications</button>
+          </div>
+        </NavLink>
+        <NavLink to="/messages" className="navlink">
+          <div className="body">
+            <MailOutlineIcon className="icon" />
+            <button className="btn liggg">Messages</button>
+          </div>
+        </NavLink>
+        <NavLink to="/bookmark" className="navlink">
+          <div className="body">
+            <BookmarkBorderIcon className="icon" />
+            <button className="btn liggg">Bookmarks</button>
+          </div>
+        </NavLink>
+        <NavLink to="/list" className="navlink">
+          <div className="body">
+            <ListAltIcon className="icon" />
+            <button className="btn liggg">List</button>
+          </div>
+        </NavLink>
+        <NavLink to="/profile" className="navlink">
+          <div className="body">
+            <PermIdentityIcon className="icon" />
+            <button className="btn liggg">Profile</button>
+          </div>
+        </NavLink>
+        {/* <NavLink to="/more"> */}
         <div className="body">
-          <SearchIcon className="icon" />
-          <button className="btn liggg">Explore</button>
+          <MoreHorizIcon className="icon" />
+          <button className="btn liggg">More</button>
         </div>
-      </NavLink>
-      <NavLink to="/notification" className="navlink">
-        <div className="body">
-          <NotificationsNoneIcon className="icon" />
-          <button className="btn liggg">Notifications</button>
+        {/* </NavLink> */}
+        <div className="body twtbtn">
+          <button className="tweetbtn">Tweet</button>
         </div>
-      </NavLink>
-      <NavLink to="/messages" className="navlink">
-        <div className="body">
-          <MailOutlineIcon className="icon" />
-          <button className="btn liggg">Messages</button>
+        <div className="ic">
+          <img className="img" src={profilepic} alt="profilepic"></img>{" "}
+          <span style={{ lineHeight: "5px" }}>
+            name<p style={{ lineHeight: "0px" }}>ranjan@2002</p>
+          </span>
         </div>
-      </NavLink>
-      <NavLink to="/bookmark" className="navlink">
-        <div className="body">
-          <BookmarkBorderIcon className="icon" />
-          <button className="btn liggg">Bookmarks</button>
-        </div>
-      </NavLink>
-      <NavLink to="/list" className="navlink">
-        <div className="body">
-          <ListAltIcon className="icon" />
-          <button className="btn liggg">List</button>
-        </div>
-      </NavLink>
-      <NavLink to="/profile" className="navlink">
-        <div className="body">
-          <PermIdentityIcon className="icon" />
-          <button className="btn liggg">Profile</button>
-        </div>
-      </NavLink>
-      {/* <NavLink to="/more"> */}
-      <div className="body">
-        <MoreHorizIcon className="icon" />
-        <button className="btn liggg">More</button>
-      </div>
-      {/* </NavLink> */}
-      <div className="body twtbtn">
-        <button className="tweetbtn">Tweet</button>
-      </div>
-      <div className="ic">
-        <img className="img" src={profilepic} alt="profilepic"></img>{" "}
-        <span style={{ lineHeight: "5px" }}>
-          name<p style={{ lineHeight: "0px" }}>ranjan@2002</p>
-        </span>
       </div>
     </A>
   );
