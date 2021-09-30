@@ -14,7 +14,7 @@ import { NavLink } from "react-router-dom";
 const A = styled.div`
   width: 100%;
   .sidebar-center {
-    margin-left: 20%;
+    margin-left: 16%;
     /* display: flex;
     flex-direction: column;
     align-items: center; */
@@ -22,7 +22,7 @@ const A = styled.div`
   .tweeticon {
     color: rgb(29, 155, 240);
     /* margin-left: 25px; */
-    font-size: 40px;
+    font-size: 33px;
     padding: 10px;
   }
   .tweeticon:hover {
@@ -34,7 +34,7 @@ const A = styled.div`
     width: 50px;
   }
   .btn {
-    margin-left: 20px;
+    margin-left: 17px;
     border: none;
     background-color: white;
     font-size: 20px;
@@ -71,6 +71,9 @@ const A = styled.div`
     height: 50px;
     border-radius: 25px;
     border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: bolder;
   }
   .backblack {
     //color: black;

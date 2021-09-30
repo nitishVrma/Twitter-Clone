@@ -1,6 +1,21 @@
+
+import SettingsIcon from '@mui/icons-material/Settings';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import styled from "styled-components"
 const A = styled.div`
-margin-top: 60px;
+width: 350px;
+border:1px solid whitesmoke;
+.heading{
+  display: grid;
+  grid-template-columns:270px 80px;
+  margin-top: 10px;
+  width: 350px;
+  font-size: 20px;
+  color: black;
+  margin-bottom: 50px;
+  border:1px solid whitesmoke;
+  padding:5px;
+}
 .line{
   line-height: 1;
 }
@@ -26,9 +41,16 @@ padding: 18px;
   background-color:rgb(29,155,240) ;
 
 
+}
+.micon{
+  margin-left: 5px;
 }`
 export function Messages() {
   return <A>
+    <div className="heading">
+      <div >Message</div>
+      <div><SettingsIcon/><MailOutlineIcon className="micon"/></div>
+  </div>
     <div className="coleb">Send a message,get</div>
     <div className="coleb">a mesage</div>
    <div className="midl">
