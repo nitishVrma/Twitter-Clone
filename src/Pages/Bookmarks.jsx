@@ -1,6 +1,6 @@
 import styled from "styled-components"
 const A = styled.div`
-margin-top: 60px;
+margin-top: 10px;
 .line{
   line-height: 1;
 }
