@@ -10,9 +10,12 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import styled from "styled-components";
 import profilepic from "../images/profilepic.jpeg";
 import { NavLink } from "react-router-dom";
+import Button from '@mui/material/Button';
+
 
 const A = styled.div`
   width: 100%;
+   color: rgb(112, 115, 118);
   .sidebar-center {
     margin-left: 16%;
     /* display: flex;
@@ -36,13 +39,16 @@ const A = styled.div`
   .btn {
     margin-left: 17px;
     border: none;
+    color:rgb(112,115,118);
     background-color: white;
     font-size: 20px;
     line-height: 5px;
+   
   }
   .icon {
     float: left;
     font-size: 30px;
+
   }
   .body {
     margin-bottom: 5px;
@@ -53,12 +59,12 @@ const A = styled.div`
     // color: rgb(112, 115, 118);
   }
   .body:hover {
-    background-color: rgb(196, 195, 195);
+    background-color: rgb(239,243,244);
     cursor: pointer;
     border-radius: 25px;
     .btn {
       cursor: pointer;
-      background-color: rgb(196, 195, 195);
+      background-color: rgb(239,243,244);
     }
     .tweetbtn {
       cursor: pointer;
@@ -78,9 +84,7 @@ const A = styled.div`
   .backblack {
     //color: black;
   }
-  .liggg {
-    color: rgb(112, 115, 118);
-  }
+
 
   .ic {
     margin-top: 45px;
@@ -112,56 +116,65 @@ const A = styled.div`
     text-decoration: none;
     color: rgb(112, 115, 118);
   }
+nav .selected{
+  color:black;
+  background-color: red;
+
+}
+
 `;
 function Sidebar() {
-  return (
+
+  return (  
     <A>
       <div className="sidebar-center">
         <div className="twt">
           <TwitterIcon className="tweeticon" />
         </div>
-        <NavLink to="/home" className="navlink">
+        <nav>
+        <NavLink to="/home" className="navlink" activeClassName="selected">
           <div className="body backblack">
             <HomeRoundedIcon className="icon" />
-            <button className="btn liggg">Home</button>
+            <button className="btn">Home</button>
           </div>
         </NavLink>
-        <NavLink to="/explore" className="navlink">
+        <NavLink to="/explore" className="navlink" activeClassName="selected">
           <div className="body">
             <SearchIcon className="icon" />
-            <button className="btn liggg">Explore</button>
+            <button className="btn">Explore</button>
           </div>
         </NavLink>
-        <NavLink to="/notification" className="navlink">
+        <NavLink to="/notification"  className="navlink" activeClassName="selected">
           <div className="body">
             <NotificationsNoneIcon className="icon" />
-            <button className="btn liggg">Notifications</button>
+            <button className="btn">Notifications</button>
           </div>
         </NavLink>
-        <NavLink to="/messages" className="navlink">
+        <NavLink to="/messages" className="navlink" activeClassName="selected">
           <div className="body">
             <MailOutlineIcon className="icon" />
-            <button className="btn liggg">Messages</button>
+            <button className="btn">Messages</button>
           </div>
         </NavLink>
-        <NavLink to="/bookmark" className="navlink">
+        <NavLink to="/bookmark" className="navlink" activeClassName="selected">
           <div className="body">
             <BookmarkBorderIcon className="icon" />
-            <button className="btn liggg">Bookmarks</button>
+            <button className="btn ">Bookmarks</button>
           </div>
         </NavLink>
-        <NavLink to="/list" className="navlink">
+        <NavLink to="/list" className="navlink" activeClassName="selected">
           <div className="body">
             <ListAltIcon className="icon" />
-            <button className="btn liggg">List</button>
+            <button className="btn ">List</button>
           </div>
         </NavLink>
-        <NavLink to="/profile" className="navlink">
+        <NavLink to="/profile" className="navlink" activeClassName="selected">
           <div className="body">
             <PermIdentityIcon className="icon" />
-            <button className="btn liggg">Profile</button>
+            <button className="btn ">Profile</button>
           </div>
         </NavLink>
+        </nav>
         {/* <NavLink to="/more"> */}
         <div className="body">
           <MoreHorizIcon className="icon" />
