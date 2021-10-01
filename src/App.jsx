@@ -7,7 +7,7 @@ import { Notification } from "./Pages/Notification";
 import { Messages } from "./Pages/Messages";
 import { Bookmarks } from "./Pages/Bookmarks";
 import { Lists } from "./Pages/Lists.jsx";
-import { Profile } from "./Pages/Profile";
+import Profile from "./components/profile/Profile";
 import { Grid } from "@material-ui/core";
 import { Posts } from "./Pages/Posts";
 import { useState } from "react";

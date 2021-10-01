@@ -112,6 +112,7 @@ const A = styled.div`
     text-decoration: none;
     color: rgb(112, 115, 118);
   }
+  
 `;
 function Sidebar() {
   return (
