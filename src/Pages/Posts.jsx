@@ -3,19 +3,20 @@ import { useState, useEffect } from "react";
 import db from "../Configs/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import axios from "axios";
+import { TweetBox } from "../components/TweetBox/TweetBox";
+// import { GetData } from "../Utils/GetData";
 
 async function query() {
   return await getDocs(collection(db, "posts"));
 }
 
-export function Posts() {
+export function Posts(data) {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:8000/posts")
       .then((res) => {
-        console.log(res);
         setPosts(res.data);
       })
       .catch((e) => {
@@ -23,11 +24,17 @@ export function Posts() {
       });
   }, []);
 
+  // setPosts(GetData());
+
+  console.log(posts);
+
   return (
     <>
-      {posts.splice(0, 10).map((post) => (
+      <TweetBox />
+      {posts.map((post) => (
         <PostCard
           key={post._id}
+          id={post._id}
           displayName={post.name}
           username={post.username}
           verified={post.verified}

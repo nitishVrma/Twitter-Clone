@@ -10,12 +10,18 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import styled from "styled-components";
 import profilepic from "../images/profilepic.jpeg";
 import { NavLink } from "react-router-dom";
+import {
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemButton,
+  ListItemText,
+} from "@mui/material";
 // import Button from '@mui/material/Button';
-
 
 const A = styled.div`
   width: 100%;
-   color: rgb(112, 115, 118);
+  color: rgb(112, 115, 118);
   .sidebar-center {
     margin-left: 16%;
     /* display: flex;
@@ -38,33 +44,36 @@ const A = styled.div`
   }
   .btn {
     margin-left: 17px;
+    margin-bottom: auto;
     border: none;
-    color:rgb(112,115,118);
-    background-color: white;
-    font-size: 20px;
-    line-height: 5px;
-   
+    // color: rgb(112, 115, 118);
+    // background-color: white;
+    font-size: 1.5rem;
+    // padding-bottom: 2px;
+    // line-height: 5px;
   }
   .icon {
-    float: left;
+    // float: left;
     font-size: 30px;
-
+    // padding-top: 2px
   }
   .body {
     margin-bottom: 5px;
     background-color: white;
     display: flex;
+    align-content: center;
+    align-items: baseline;
     width: 200px;
     padding: 10px;
     // color: rgb(112, 115, 118);
   }
   .body:hover {
-    background-color: rgb(239,243,244);
+    background-color: rgb(239, 243, 244);
     cursor: pointer;
     border-radius: 25px;
     .btn {
       cursor: pointer;
-      background-color: rgb(239,243,244);
+      background-color: rgb(239, 243, 244);
     }
     .tweetbtn {
       cursor: pointer;
@@ -84,7 +93,6 @@ const A = styled.div`
   .backblack {
     //color: black;
   }
-
 
   .ic {
     margin-top: 45px;
@@ -110,77 +118,136 @@ const A = styled.div`
     background-color: white;
   }
   .selected {
-    // background-color: #c1dee6;
+    background-color: #c1dee6;
+    font-weight: 500;
+    color: #0f1419;
   }
   .navlink {
     text-decoration: none;
     color: rgb(112, 115, 118);
   }
-nav .selected{
-  color:black;
-  background-color: red;
-
-}
-
+  nav .selected {
+    color: black;
+    background-color: red;
+  }
 `;
-function Sidebar() {
 
-  return (  
+const menuItems = [
+  {
+    icon: <HomeRoundedIcon />,
+    name: "Home",
+  },
+  {
+    icon: <SearchIcon />,
+    name: "Explore",
+  },
+  {
+    icon: <NotificationsNoneIcon />,
+    name: "Notifications",
+  },
+  {
+    icon: <MailOutlineIcon />,
+    name: "Messages",
+  },
+  {
+    icon: <BookmarkBorderIcon />,
+    name: "Bookmarks",
+  },
+  {
+    icon: <ListAltIcon />,
+    name: "Lists",
+  },
+  {
+    icon: <PermIdentityIcon />,
+    name: "Profile",
+  },
+];
+
+function Sidebar() {
+  return (
     <A>
       <div className="sidebar-center">
         <div className="twt">
           <TwitterIcon className="tweeticon" />
         </div>
+
+        {/* <List>
+          {menuItems.map((item) => (
+            <NavLink
+              to={`/${item.name.toLowerCase()}`}
+              className="navlink"
+              activeClassName="selected"
+            >
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon className="icon">{item.icon}</ListItemIcon>
+                  <ListItemText primary={`${item.name}`} />
+                </ListItemButton>
+              </ListItem>
+            </NavLink>
+          ))}
+        </List> */}
+
         <nav>
-        <NavLink to="/home" className="navlink" activeClassName="selected">
-          <div className="body backblack">
-            <HomeRoundedIcon className="icon" />
-            <button className="btn">Home</button>
-          </div>
-        </NavLink>
-        <NavLink to="/explore" className="navlink" activeClassName="selected">
-          <div className="body">
-            <SearchIcon className="icon" />
-            <button className="btn">Explore</button>
-          </div>
-        </NavLink>
-        <NavLink to="/notification"  className="navlink" activeClassName="selected">
-          <div className="body">
-            <NotificationsNoneIcon className="icon" />
-            <button className="btn">Notifications</button>
-          </div>
-        </NavLink>
-        <NavLink to="/messages" className="navlink" activeClassName="selected">
-          <div className="body">
-            <MailOutlineIcon className="icon" />
-            <button className="btn">Messages</button>
-          </div>
-        </NavLink>
-        <NavLink to="/bookmark" className="navlink" activeClassName="selected">
-          <div className="body">
-            <BookmarkBorderIcon className="icon" />
-            <button className="btn ">Bookmarks</button>
-          </div>
-        </NavLink>
-        <NavLink to="/list" className="navlink" activeClassName="selected">
-          <div className="body">
-            <ListAltIcon className="icon" />
-            <button className="btn ">List</button>
-          </div>
-        </NavLink>
-        <NavLink to="/profile" className="navlink" activeClassName="selected">
-          <div className="body">
-            <PermIdentityIcon className="icon" />
-            <button className="btn ">Profile</button>
-          </div>
-        </NavLink>
+          <NavLink to="/home" className="navlink" activeClassName="selected">
+            <div className="body">
+              <HomeRoundedIcon className="icon" />
+              <div className="btn">Home</div>
+            </div>
+          </NavLink>
+          <NavLink to="/explore" className="navlink" activeClassName="selected">
+            <div className="body">
+              <SearchIcon className="icon" />
+              <div className="btn">Explore</div>
+            </div>
+          </NavLink>
+          <NavLink
+            to="/notification"
+            className="navlink"
+            activeClassName="selected"
+          >
+            <div className="body">
+              <NotificationsNoneIcon className="icon" />
+              <div className="btn">Notifications</div>
+            </div>
+          </NavLink>
+          <NavLink
+            to="/messages"
+            className="navlink"
+            activeClassName="selected"
+          >
+            <div className="body">
+              <MailOutlineIcon className="icon" />
+              <div className="btn">Messages</div>
+            </div>
+          </NavLink>
+          <NavLink
+            to="/bookmark"
+            className="navlink"
+            activeClassName="selected"
+          >
+            <div className="body">
+              <BookmarkBorderIcon className="icon" />
+              <div className="btn ">Bookmarks</div>
+            </div>
+          </NavLink>
+          <NavLink to="/list" className="navlink" activeClassName="selected">
+            <div className="body">
+              <ListAltIcon className="icon" />
+              <div className="btn ">List</div>
+            </div>
+          </NavLink>
+          <NavLink to="/profile" className="navlink" activeClassName="selected">
+            <div className="body">
+              <PermIdentityIcon className="icon" />
+              <div className="btn ">Profile</div>
+            </div>
+          </NavLink>
         </nav>
-        {/* <NavLink to="/more"> */}
         <div className="body">
           <MoreHorizIcon className="icon" />
-          <button className="btn liggg">More</button>
+          <div className="btn liggg">More</div>
         </div>
-        {/* </NavLink> */}
         <div className="body twtbtn">
           <button className="tweetbtn">Tweet</button>
         </div>

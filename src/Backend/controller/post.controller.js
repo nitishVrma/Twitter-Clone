@@ -22,4 +22,18 @@ router.get("", async function (req, res) {
   return res.status(201).json(post);
 });
 
+router.patch("", async function (req, res) {
+  const post = await Post.findById(req.body.id);
+
+  post[req.body.button] = req.body.status
+    ? post[req.body.button] + 1
+    : post[req.body.button] - 1;
+
+  console.log(req.body.button);
+
+  await Post.findByIdAndUpdate(req.body.id, post);
+
+  return res.status(200).send(post);
+});
+
 module.exports = router;

@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const connect = () => {
   return mongoose
     .connect(
-      `mongodb+srv://tauseef:ansaritauseef@cluster0.zbp8a.mongodb.net/tweet?retryWrites=true&w=majority`
+      `mongodb://127.0.0.1:27017/twitter`
     )
     .then(() => {
       console.log("connection successfull");

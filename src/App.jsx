@@ -1,5 +1,5 @@
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import Signup from "./components/signup/Signup";
 import Sidebar from "./components/sidebar";
 import { Explore } from "./Pages/Explore";
@@ -15,10 +15,16 @@ import { useState } from "react";
 function App() {
   const [login, setLogin] = useState(false);
 
+  let history = useHistory();
+
+  if (login === false) {
+    history.push("/home");
+  }
+
   return (
     <>
       {login ? (
-        <Signup setLogin={setLogin}/>
+        <Signup setLogin={setLogin} />
       ) : (
         <Grid container className="App">
           <Grid item sm={2} md={3}>
