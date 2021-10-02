@@ -12,6 +12,8 @@ import { Profile } from "./Pages/Profile";
 import { Grid } from "@material-ui/core";
 import { Feed } from "./components/Feed/Feed"
 import { useState } from "react";
+import { Folow } from "./components/WhotoFolow/Follow";
+import { SearchBar } from "./components/WhotoFolow/srearcTweeter";
 
 // import { Widgets } from "./components/widgets/Widgets"
 function App() {
@@ -25,6 +27,7 @@ function App() {
 
   return (
     <>
+      
       {/* <Widgets/> */}
       {login ? (
         <Signup setLogin={setLogin} />
@@ -57,7 +60,8 @@ function App() {
                 <Profile />
               </Route>
             </Switch>
-          </Grid>
+            </Grid>
+            <Grid><SearchBar/><Folow/></Grid>
         </Grid>
       )}
     </>
