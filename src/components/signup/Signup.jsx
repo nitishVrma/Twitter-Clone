@@ -5,7 +5,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import CloseIcon from "@mui/icons-material/Close";
 import { v4 as uuid } from "uuid";
 import axios from "axios";
-import userModel from "../../Backend/model/user.model";
+
 // import AppleIcon from '@mui/icons-material/Apple';
 
 const customStyles = {
@@ -50,6 +50,7 @@ export default function Signup({ setLogin }) {
     console.log(user);
     axios.post("http://localhost:8000/users", user);
     localStorage.setItem("username", JSON.stringify(username));
+    localStorage.setItem("name", JSON.stringify(user.displayName));
   };
 
   const [modalIsOpen, setIsOpen] = useState(false);

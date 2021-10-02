@@ -20,7 +20,10 @@ import {
 // import Button from '@mui/material/Button';
 
 const A = styled.div`
-  width: 100%;
+
+  position: fixed;
+  margin-left: 30px;
+ 
   color: rgb(112, 115, 118);
   .sidebar-center {
     margin-left: 16%;
@@ -164,6 +167,8 @@ const menuItems = [
 ];
 
 function Sidebar() {
+  const name =JSON.parse(localStorage.getItem("name"))
+  const username = JSON.parse(localStorage.getItem("username"));
   return (
     <A>
       <div className="sidebar-center">
@@ -253,8 +258,8 @@ function Sidebar() {
         </div>
         <div className="ic">
           <img className="img" src={profilepic} alt="profilepic"></img>{" "}
-          <span style={{ lineHeight: "5px" }}>
-            name<p style={{ lineHeight: "0px" }}>ranjan@2002</p>
+          <span style={{ lineHeight: "3px",marginLeft:"5px" }}>
+            {name}<p style={{ lineHeight: "0px" ,marginLeft:"5px"}}>@{ username}</p>
           </span>
         </div>
       </div>

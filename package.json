@@ -27,6 +27,7 @@
     "react-multi-carousel": "^2.6.5",
     "react-router-dom": "^5.3.0",
     "react-scripts": "4.0.3",
+    "socket.io": "^4.2.0",
     "styled-components": "^5.3.0",
     "uuid": "^8.3.2",
     "web-vitals": "^1.1.2"
@@ -36,7 +37,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "nodemon src/Backend/server"
+    "server": "nodemon src/f-backend/server"
   },
   "eslintConfig": {
     "extends": [

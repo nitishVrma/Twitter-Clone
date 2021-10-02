@@ -1,3 +1,4 @@
+
 import "./App.css";
 import { Switch, Route, useHistory } from "react-router-dom";
 import Signup from "./components/signup/Signup";
@@ -9,9 +10,10 @@ import { Bookmarks } from "./Pages/Bookmarks";
 import { Lists } from "./Pages/Lists.jsx";
 import { Profile } from "./Pages/Profile";
 import { Grid } from "@material-ui/core";
-import { Posts } from "./Pages/Posts";
+import { Feed } from "./components/Feed/Feed"
 import { useState } from "react";
 
+// import { Widgets } from "./components/widgets/Widgets"
 function App() {
   const [login, setLogin] = useState(false);
 
@@ -23,6 +25,7 @@ function App() {
 
   return (
     <>
+      {/* <Widgets/> */}
       {login ? (
         <Signup setLogin={setLogin} />
       ) : (
@@ -33,7 +36,7 @@ function App() {
           <Grid item sm={9} md={6}>
             <Switch>
               <Route path="/home">
-                <Posts />
+                <Feed/>
               </Route>
               <Route path="/explore">
                 <Explore />

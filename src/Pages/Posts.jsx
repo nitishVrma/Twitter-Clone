@@ -10,9 +10,10 @@ async function query() {
   return await getDocs(collection(db, "posts"));
 }
 
-export function Posts(data) {
+export function Posts() {
   const [posts, setPosts] = useState([]);
 
+  console.log();
   useEffect(() => {
     axios
       .get("http://localhost:8000/posts")
@@ -26,7 +27,6 @@ export function Posts(data) {
 
   // setPosts(GetData());
 
-  console.log(posts);
 
   return (
     <>
@@ -35,12 +35,12 @@ export function Posts(data) {
         <PostCard
           key={post._id}
           id={post._id}
-          displayName={post.name}
+          displayName={post.displayName}
           username={post.username}
           verified={post.verified}
-          text={post.post}
+          text={post.text}
           time_posted={post.time_posted}
-          image={post.picture}
+          image={post.image}
           likes={post.likes}
           reply={post.reply}
           retweet={post.retweet}

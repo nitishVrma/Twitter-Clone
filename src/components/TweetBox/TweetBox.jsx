@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Avatar, Button } from "@material-ui/core";
+import { Avatar, Button, Grid } from "@material-ui/core";
 import axios from "axios";
+
 import "./TweetBox.css";
 
 export const TweetBox = ({ getData }) => {
@@ -16,11 +17,10 @@ export const TweetBox = ({ getData }) => {
 
   const handlePost = (e) => {
     e.preventDefault();
-    console.log(postTweet);
-
-    const username = localStorage.getItem("username");
-
-    setPostTweet({ ...postTweet, username: username });
+     const name =JSON.parse(localStorage.getItem("name"))
+  const username = JSON.parse(localStorage.getItem("username"));
+    
+    setPostTweet({ ...postTweet, username: username ,name:name});
 
     axios
       .post("http://localhost:8000/posts", postTweet)
@@ -34,7 +34,7 @@ export const TweetBox = ({ getData }) => {
       .catch((err) => {
         console.log(err);
       });
-      
+ 
   };
 
   return (
@@ -55,6 +55,7 @@ export const TweetBox = ({ getData }) => {
           name="image"
           onChange={handleChange}
         ></input>
+        
         <Button
           value=""
           variant="contained"
@@ -65,5 +66,6 @@ export const TweetBox = ({ getData }) => {
         </Button>
       </form>
     </div>
+  
   );
 };
