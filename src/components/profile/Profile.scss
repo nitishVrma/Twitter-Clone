@@ -1,0 +1,159 @@
+@import "../global.scss";
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  width: 640px;
+  border: 1px solid rgb(236, 236, 236);
+  overflow: hidden;
+
+  * {
+    margin: 0px;
+  }
+
+  .header {
+    display: flex;
+    // border: 1px solid red;
+    padding: 15px 0px 0px 10px;
+
+    .arrow {
+      * {
+        font-size: 20px;
+        // border: 1px solid red;
+      }
+    }
+    .name {
+      //   border: 1px solid red;
+      margin-top: -15px;
+      text-align: left;
+      margin-left: 40px;
+
+      h3 {
+        color: $dColor;
+        font-size: 21px;
+        margin: 0px;
+        padding: 0px;
+        // border: 1px solid red;
+      }
+      p {
+        // border: 1px solid red;
+        font-size: 13px;
+        height: 100%;
+        color: gray;
+        margin-bottom: 3px;
+      }
+    }
+  }
+  .pic {
+    // border: 1px solid red;
+    height: 300px;
+    text-align: right;
+    div {
+      width: 100%;
+      height: 220px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    button {
+      background-color: transparent;
+      border: 1px solid rgb(221, 221, 221);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 9px 17px;
+      color: $dColor;
+      margin-top: 10px;
+      margin-right: 17px;
+      border-radius: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #e7e7e8;
+      }
+    }
+    .profilePic {
+      width: 150px;
+      //   border: 1px solid red;
+      height: 150px;
+      position: relative;
+      background-color: white;
+      left: 15px;
+      top: -130px;
+      padding: 6px;
+      border-radius: 50%;
+
+      img {
+        border-radius: 50%;
+        // border: 1px solid red;
+      }
+    }
+  }
+  .details {
+    text-align: left;
+    padding-left: 17px;
+
+    h2 {
+      color: $dColor;
+      font-weight: 800;
+      font-size: 22px;
+    }
+    div {
+      margin-top: 13px;
+      display: flex;
+      p {
+        margin-right: 18px;
+        color: $dColor;
+        font-weight: bold;
+        cursor: pointer;
+        // border: 1px solid red;
+        padding-right: 5px;
+
+        span {
+          color: $fColor;
+          font-weight: normal;
+        }
+        :hover {
+          text-decoration: underline 1px solid black;
+        }
+      }
+    }
+    .date {
+      color: $fColor;
+
+      span {
+        vertical-align: top;
+        margin-left: 4px;
+      }
+    }
+    p {
+      color: $fColor;
+    }
+  }
+  .navbar {
+    margin-top: 20px;
+    // border: 1px solid red;
+    display: flex;
+    width: 99.8%;
+
+    button {
+      flex-grow: 1;
+      height: 55px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      transition: ease 0.3s;
+      font-size: 15px;
+      color: $fColor;
+      font-weight: 500;
+
+      &:hover {
+        background-color: #e7e7e8;
+      }
+    }
+  }
+  .content {
+    border: 1px solid rgb(221, 221, 221);
+    width: 100%;
+  }
+}

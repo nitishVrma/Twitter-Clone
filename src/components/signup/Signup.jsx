@@ -135,7 +135,7 @@ export default function Signup({ setLogin }) {
           />
         </div>
         <h1>Happening now</h1>
-        <h2>Sign in to Twitter.</h2>
+        <h2>Join Twitter today.</h2>
         <div className="signbox">Sign in with Google</div>
         <div className="signbox">Sign in with Apple</div>
         <div className="signbox" onClick={openModal}>
