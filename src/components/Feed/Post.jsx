@@ -4,7 +4,7 @@ import { Avatar } from '@material-ui/core';
 import  VerfiedUserIcon  from '@material-ui/icons/VerifiedUser';
 import ChatBubbleOutlinedIcon from '@material-ui/icons/ChatBubbleOutlined';
 import RepeatIcon from '@material-ui/icons/Repeat';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import PublishIcon from '@material-ui/icons/Publish';
 import { useState } from 'react';
 
@@ -36,7 +36,7 @@ export const Post = ({ displayName, userName, verified, text, image, avatar }) =
                 <div className="post_footer">
                     <ChatBubbleOutlinedIcon fontSize="small" />
                     <RepeatIcon fontSize="small" />
-                    <FavoriteBorderIcon className={love?"icon1":""} onClick={()=>setLove(!love)} fontSize="small" />
+                    <FavoriteIcon className={love?"icon1":""} onClick={()=>setLove(!love)} fontSize="small" />
                     <PublishIcon fontSize="small" />
                 </div>
             </div>

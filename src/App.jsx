@@ -14,10 +14,11 @@ import { Feed } from "./components/Feed/Feed"
 import { useState } from "react";
 import { Folow } from "./components/WhotoFolow/Follow";
 import { SearchBar } from "./components/WhotoFolow/srearcTweeter";
+import Login from "./components/login/Login"
 
 // import { Widgets } from "./components/widgets/Widgets"
 function App() {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(true);
 
   let history = useHistory();
 
@@ -31,6 +32,7 @@ function App() {
       {/* <Widgets/> */}
       {login ? (
         <Signup setLogin={setLogin} />
+        
       ) : (
         <Grid container className="App">
           <Grid item sm={2} md={3}>
@@ -59,6 +61,7 @@ function App() {
               <Route exact path="/profile">
                 <Profile />
               </Route>
+              
             </Switch>
             </Grid>
             <Grid><SearchBar/><Folow/></Grid>

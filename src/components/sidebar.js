@@ -126,36 +126,36 @@ const A = styled.div`
   }
 `;
 
-const menuItems = [
-  {
-    icon: <HomeRoundedIcon />,
-    name: "Home",
-  },
-  {
-    icon: <SearchIcon />,
-    name: "Explore",
-  },
-  {
-    icon: <NotificationsNoneIcon />,
-    name: "Notifications",
-  },
-  {
-    icon: <MailOutlineIcon />,
-    name: "Messages",
-  },
-  {
-    icon: <BookmarkBorderIcon />,
-    name: "Bookmarks",
-  },
-  {
-    icon: <ListAltIcon />,
-    name: "Lists",
-  },
-  {
-    icon: <PermIdentityIcon />,
-    name: "Profile",
-  },
-];
+// const menuItems = [
+//   {
+//     icon: <HomeRoundedIcon />,
+//     name: "Home",
+//   },
+//   {
+//     icon: <SearchIcon />,
+//     name: "Explore",
+//   },
+//   {
+//     icon: <NotificationsNoneIcon />,
+//     name: "Notifications",
+//   },
+//   {
+//     icon: <MailOutlineIcon />,
+//     name: "Messages",
+//   },
+//   {
+//     icon: <BookmarkBorderIcon />,
+//     name: "Bookmarks",
+//   },
+//   {
+//     icon: <ListAltIcon />,
+//     name: "Lists",
+//   },
+//   {
+//     icon: <PermIdentityIcon />,
+//     name: "Profile",
+//   },
+// ];
 
 function Sidebar() {
   const name =JSON.parse(localStorage.getItem("name"))

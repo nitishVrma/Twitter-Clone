@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./signup.scss";
+import { NavLink } from "react-router-dom";
 import Modal from "react-modal";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import CloseIcon from "@mui/icons-material/Close";
-import { v4 as uuid } from "uuid";
+// import { v4 as uuid } from "uuid";
 import axios from "axios";
 
 // import AppleIcon from '@mui/icons-material/Apple';
@@ -143,7 +144,7 @@ export default function Signup({ setLogin }) {
           Use phone, email or username{" "}
         </div>
         <p>
-          Don’t have an account? <span>Sign up</span>
+        Already have an account? <span>Sign in</span>
         </p>
       </div>
     </div>

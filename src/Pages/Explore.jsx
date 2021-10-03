@@ -63,7 +63,7 @@ export function Explore() {
       <button className="btn">Entertainment</button>
     </div>
     <div className="imgs">
-      <img src="https://th.bing.com/th/id/OIP.dFMwmHEa74JfY3CmES7vMAHaE8?w=259&h=180&c=7&r=0&o=5&pid=1.7" alt="" alt="image" />
+      <img src="https://www.behindwoods.com/hindi-movies/event-photos-pictures-stills/ipl-2018/ipl-2018-hd-posters-photos-stills-21.jpg" alt="" alt="image" />
     </div>
     {data.map((e,i) => {
       return <div className="box">
