@@ -167,22 +167,7 @@ function Sidebar() {
           <TwitterIcon className="tweeticon" />
         </div>
 
-        {/* <List>
-          {menuItems.map((item) => (
-            <NavLink
-              to={`/${item.name.toLowerCase()}`}
-              className="navlink"
-              activeClassName="selected"
-            >
-              <ListItem disablePadding>
-                <ListItemButton>
-                  <ListItemIcon className="icon">{item.icon}</ListItemIcon>
-                  <ListItemText primary={`${item.name}`} />
-                </ListItemButton>
-              </ListItem>
-            </NavLink>
-          ))}
-        </List> */}
+      
 
         <nav>
           <NavLink to="/home" className="navlink" activeClassName="selected">
