@@ -1,67 +1,58 @@
-import React, { useState } from "react";
-import "./signup.scss";
+import React, { useState } from 'react';
+import "./login.scss";
 import Modal from "react-modal";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import CloseIcon from "@mui/icons-material/Close";
-import { v4 as uuid } from "uuid";
-import axios from "axios";
-// import AppleIcon from '@mui/icons-material/Apple';
 
 const customStyles = {
-  content: {
-    height: "600px",
-    width: "540px",
-    borderRadius: "20px",
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-  },
-  // .center {
-  //     border: 1px solid red;
-  //   }
+    content: {
+      height: "600px",
+      width: "540px",
+      borderRadius: "20px",
+      top: "50%",
+      left: "50%",
+      right: "auto",
+      bottom: "auto",
+      marginRight: "-50%",
+      transform: "translate(-50%, -50%)",
+    },
 };
 
-export default function Signup({ setLogin }) {
-  const [user, setUser] = useState({
-    displayName: "",
-    username: "",
-    email: "",
-    phone: "",
-    password: "",
-    dob: "",
-  });
-  let name, value;
-  const handleInputs = (e) => {
-    // e.preventDefault(e);
-    name = e.target.name;
-    value = e.target.value;
+export default function Login() {
 
-    setUser({ ...user, [name]: value });
-    // console.log(user)
-  };
+    const [user, setUser] = useState({
+        displayName: "",
+        username: "",
+        email: "",
+        phone: "",
+        password: "",
+        dob: "",
+      });
+      let name, value;
+      const handleInputs = (e) => {
+        // e.preventDefault(e);
+        name = e.target.name;
+        value = e.target.value;
+    
+        setUser({ ...user, [name]: value });
+        // console.log(user)
+      };
+    
+      const handleSubmit = (e) => {
+        e.preventDefault(e);
+      };
+    
+      const [modalIsOpen, setIsOpen] = useState(false);
+    
+      function openModal() {
+        setIsOpen(true);
+      }
+      function closeModal() {
+        setIsOpen(false);
+      }
 
-  const handleSubmit = (e) => {
-    e.preventDefault(e);
-    const username = uuid();
-    setUser({ ...user, username: username });
-    setLogin(false);
-    axios.post("http://localhost:8000/users", user);
-  };
-
-  const [modalIsOpen, setIsOpen] = useState(false);
-
-  function openModal() {
-    setIsOpen(true);
-  }
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  return (
-    <div className="container">
+    return (
+        <div className="container">
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -81,13 +72,7 @@ export default function Signup({ setLogin }) {
             <div className="form">
               <h2>Create your account</h2>
               <form className="input" action="">
-                <input
-                  value={user.displayName}
-                  onChange={handleInputs}
-                  type="text"
-                  placeholder="Name"
-                  name="displayName"
-                />
+                
                 <input
                   value={user.email}
                   onChange={handleInputs}
@@ -96,25 +81,11 @@ export default function Signup({ setLogin }) {
                   name="email"
                 />
                 <input
-                  value={user.phone}
-                  onChange={handleInputs}
-                  type="number"
-                  placeholder="Phone"
-                  name="phone"
-                />
-                <input
                   value={user.password}
                   onChange={handleInputs}
                   type="password"
                   placeholder="Password"
                   name="password"
-                />
-                <input
-                  value={user.dob}
-                  onChange={handleInputs}
-                  type="date"
-                  placeholder="Date Of Birth"
-                  name="dob"
                 />
                 <button onClick={handleSubmit}>Next</button>
               </form>
@@ -133,7 +104,7 @@ export default function Signup({ setLogin }) {
           />
         </div>
         <h1>Happening now</h1>
-        <h2>Join Twitter today.</h2>
+        <h2>Sign in to Twitter.</h2>
         <div className="signbox">Sign in with Google</div>
         <div className="signbox">
           <div>
@@ -153,5 +124,5 @@ export default function Signup({ setLogin }) {
         </p>
       </div>
     </div>
-  );
+    )
 }

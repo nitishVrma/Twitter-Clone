@@ -116,17 +116,11 @@ const A = styled.div`
     text-decoration: none;
     color: rgb(112, 115, 118);
   }
-<<<<<<< HEAD
-  
-||||||| 9576abd
-=======
 nav .selected{
   color:black;
   background-color: red;
 
 }
-
->>>>>>> 33fb4533cac9b65e2e47361c5cb20a07ee98b01b
 `;
 function Sidebar() {
 
