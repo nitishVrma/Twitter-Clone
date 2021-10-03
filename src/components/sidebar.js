@@ -8,16 +8,10 @@ import ListAltIcon from "@material-ui/icons/ListAlt";
 import PermIdentityIcon from "@material-ui/icons/PermIdentity";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import styled from "styled-components";
-import profilepic from "../images/profilepic.jpeg";
+
 import { NavLink } from "react-router-dom";
-import {
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemButton,
-  ListItemText,
-} from "@mui/material";
-// import Button from '@mui/material/Button';
+
+
 
 const A = styled.div`
 
@@ -27,13 +21,11 @@ const A = styled.div`
   color: rgb(112, 115, 118);
   .sidebar-center {
     margin-left: 16%;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
+  
   }
   .tweeticon {
     color: rgb(29, 155, 240);
-    /* margin-left: 25px; */
+ 
     font-size: 33px;
     padding: 10px;
   }
@@ -49,26 +41,24 @@ const A = styled.div`
     margin-left: 17px;
     margin-bottom: auto;
     border: none;
-    // color: rgb(112, 115, 118);
-    // background-color: white;
-    font-size: 1.5rem;
-    // padding-bottom: 2px;
-    // line-height: 5px;
+ 
+    font-size: 1.3rem;
+
   }
   .icon {
-    // float: left;
+  
     font-size: 30px;
-    // padding-top: 2px
+   
   }
   .body {
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     background-color: white;
     display: flex;
     align-content: center;
     align-items: baseline;
     width: 200px;
     padding: 10px;
-    // color: rgb(112, 115, 118);
+  
   }
   .body:hover {
     background-color: rgb(239, 243, 244);
@@ -98,7 +88,7 @@ const A = styled.div`
   }
 
   .ic {
-    margin-top: 45px;
+    margin-top: 30px;
     width: 200px;
     height: 50px;
   }
@@ -126,6 +116,7 @@ const A = styled.div`
     color: #0f1419;
   }
   .navlink {
+  
     text-decoration: none;
     color: rgb(112, 115, 118);
   }
@@ -257,7 +248,7 @@ function Sidebar() {
           <button className="tweetbtn">Tweet</button>
         </div>
         <div className="ic">
-          <img className="img" src={profilepic} alt="profilepic"></img>{" "}
+          <img className="img" src="https://www.bing.com/th?id=OIP.-UqHWg7MI4KvhdnQBpFLPwHaHa&w=204&h=204&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="profilepic"></img>{" "}
           <span style={{ lineHeight: "3px",marginLeft:"5px" }}>
             {name}<p style={{ lineHeight: "0px" ,marginLeft:"5px"}}>@{ username}</p>
           </span>

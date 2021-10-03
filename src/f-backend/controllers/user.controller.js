@@ -40,11 +40,16 @@ router.get("", async function (req, res) {
 
   return res.status(201).json(user);
 });
+router.post("/update", async function (req, res) {
+ 
+  console.log( "inside.sjbjs");
+  res.send("done")
+})
 
-router.get("/:getprofile", async function (req, res) {
+router.get("", async function (req, res) {
   // console.log(req.body.username);
-
-  const x = req.params.getprofile;
+   console.log("aa gaya")
+  const x = req.params.id;
   console.log(x);
 
   // console.log(req.body.username);

@@ -38,25 +38,25 @@ function App() {
           </Grid>
           <Grid item sm={9} md={6}>
             <Switch>
-              <Route path="/home">
+              <Route exact path="/home">
                 <Feed/>
               </Route>
-              <Route path="/explore">
+              <Route exact path="/explore">
                 <Explore />
               </Route>
-              <Route path="/notification">
+              <Route exact path="/notification">
                 <Notification />
               </Route>
-              <Route path="/messages">
+              <Route exact path="/messages">
                 <Messages />
               </Route>
-              <Route path="/bookmark">
+              <Route exact path="/bookmark">
                 <Bookmarks />
               </Route>
-              <Route path="/list">
+              <Route exact path="/list">
                 <Lists />
               </Route>
-              <Route path="/profile">
+              <Route exact path="/profile">
                 <Profile />
               </Route>
             </Switch>

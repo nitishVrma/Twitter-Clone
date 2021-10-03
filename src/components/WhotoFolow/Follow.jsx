@@ -13,15 +13,16 @@ padding: 15px;
 width: 30px;
 height: 30px;
 border-radius: 50%;
-border:1px solid black
+border:1px solid black;
 }
 .itbox{
     display: grid;
-    grid-template-columns: 0.5fr 2fr 0.8fr;
+    grid-template-columns: 0.8fr 1.5fr 1.5fr;
     padding: 8px;
 }
 .itbox:hover{
-background-color:rgb(199,201,202);
+background-color:whitesmoke;
+  border-radius: 25px;
 }
 .fright{
     border:1px solid black;
@@ -50,7 +51,8 @@ cursor: pointer;
 }
 `
 export function Folow() {
- const [mypost, setMypost] = useState([]);
+    const [mypost, setMypost] = useState([]);
+    const [follow, setFollow] = useState(true);
     useEffect(() => {
         getData();
     }, [])
@@ -62,6 +64,16 @@ export function Folow() {
             setMypost(data.reverse());
             console.log(mypost)
         });
+    }
+    const handleclick = (e) => {
+        if (e.target.innerText === "Follow") {
+            e.target.innerText = "UnFollow";
+        }
+        else {
+            e.target.innerText = "Follow";
+        }
+        setFollow(!follow)
+        
     }
 
     return <A>
@@ -75,7 +87,7 @@ export function Folow() {
                 <div>ranjan</div>
             </div>
        
-            <div ><button className="fright">Follow</button></div>
+                    <div ><button  className="fright" onClick={(e)=>handleclick(e)}>Follow</button></div>
                 </div>
             )
        })} 

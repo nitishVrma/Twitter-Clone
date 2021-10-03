@@ -49,7 +49,7 @@ export const TweetBox = ({getData}) => {
         <div className="TweetBox">
             <form>
                 <div className="TweetBox_Input">
-                    <Avatar src="https://i.pinimg.com/236x/51/b6/90/51b6908a55dce145f45eaafac221930d--harry-potter-art-love-it.jpg?nii=t"></Avatar>
+                    <Avatar src="https://www.bing.com/th?id=OIP.-UqHWg7MI4KvhdnQBpFLPwHaHa&w=204&h=204&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"></Avatar>
                     <input placeholder="What's happening" type="text" name="text" onChange={handleChange}></input>
                 </div>
                 <input placeholder="Enter image url" type="text" name="image" onChange={handleChange}></input>
