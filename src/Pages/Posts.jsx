@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import db from "../Configs/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import axios from "axios";
+import { TweetBox } from "../components/TweetBox/TweetBox";
+// import { GetData } from "../Utils/GetData";
 
 async function query() {
   return await getDocs(collection(db, "posts"));
@@ -11,11 +13,11 @@ async function query() {
 export function Posts() {
   const [posts, setPosts] = useState([]);
 
+  console.log();
   useEffect(() => {
     axios
       .get("http://localhost:8000/posts")
       .then((res) => {
-        console.log(res);
         setPosts(res.data);
       })
       .catch((e) => {
@@ -23,17 +25,22 @@ export function Posts() {
       });
   }, []);
 
+  // setPosts(GetData());
+
+
   return (
     <>
-      {posts.splice(0, 10).map((post) => (
+      <TweetBox />
+      {posts.map((post) => (
         <PostCard
           key={post._id}
-          displayName={post.name}
+          id={post._id}
+          displayName={post.displayName}
           username={post.username}
           verified={post.verified}
-          text={post.post}
+          text={post.text}
           time_posted={post.time_posted}
-          image={post.picture}
+          image={post.image}
           likes={post.likes}
           reply={post.reply}
           retweet={post.retweet}

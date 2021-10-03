@@ -1,5 +1,19 @@
 .App {
-  text-align: center;
+  /* font-family: "twitter";
+  src: url(../chirp-extended-heavy-web.woff);
+  font-style: normal;
+  font-weight: 100; */
+}
+
+@font-face {
+  font-family: "TwitterChirp";
+  src: url(https://abs.twimg.com/fonts/v2/chirp-regular-web.woff);
+  font-style: normal;
+  font-weight: 100;
+}
+
+* {
+  font-family: "TwitterChirp";
 }
 
 .App-logo {

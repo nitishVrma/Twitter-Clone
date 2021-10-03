@@ -5,6 +5,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import CloseIcon from "@mui/icons-material/Close";
 import { v4 as uuid } from "uuid";
 import axios from "axios";
+
 // import AppleIcon from '@mui/icons-material/Apple';
 
 const customStyles = {
@@ -35,20 +36,21 @@ export default function Signup({ setLogin }) {
   });
   let name, value;
   const handleInputs = (e) => {
-    // e.preventDefault(e);
     name = e.target.name;
     value = e.target.value;
-
     setUser({ ...user, [name]: value });
-    // console.log(user)
   };
 
   const handleSubmit = (e) => {
     e.preventDefault(e);
-    const username = uuid();
+    const username = user.email.slice(0, 4) + String(user.phone).slice(0, 5);
+    console.log(username);
     setUser({ ...user, username: username });
     setLogin(false);
+    console.log(user);
     axios.post("http://localhost:8000/users", user);
+    localStorage.setItem("username", JSON.stringify(username));
+    localStorage.setItem("name", JSON.stringify(user.displayName));
   };
 
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -135,15 +137,7 @@ export default function Signup({ setLogin }) {
         <h1>Happening now</h1>
         <h2>Join Twitter today.</h2>
         <div className="signbox">Sign in with Google</div>
-        <div className="signbox">
-          <div>
-            {/* <div className="apple">
-                        <img src="https://w7.pngwing.com/pngs/468/690/png-transparent-apple-logo-iphone-5c-iphone-x-iphone-8-apple-ios-apple-mac-icon-miscellaneous-heart-logo-thumbnail.png" alt="" />
-                    </div> */}
-            {/* <AppleIcon className="icon"></AppleIcon> */}
-            Sign in with Apple
-          </div>
-        </div>
+        <div className="signbox">Sign in with Apple</div>
         <div className="signbox" onClick={openModal}>
           {" "}
           Use phone, email or username{" "}
